@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Pakaya'),
+          child: Text('Pakayas'),
         ),
         backgroundColor: Colors.red,
       ),
