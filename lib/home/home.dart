@@ -179,6 +179,11 @@ class _HomeState extends State<Home> {
                               'note': value2.text,
                               'user': name.displayName,
                               'date': formattedDate1,
+                              selectedUser: '',
+                              selectTime: '',
+                              selectType: '',
+                              value1.text: '',
+                              value2.text: ''
                             });
                           },
                           fillColor: Colors.red,
