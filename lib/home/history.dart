@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:animalbook/widgets/provider_widet.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class History extends StatelessWidget {
   const History({Key key}) : super(key: key);
@@ -12,7 +13,7 @@ class History extends StatelessWidget {
         backgroundColor: Color.fromRGBO(245, 48, 111, 1.0),
         title: Center(
             child: Text(
-          'Tickets',
+          'History',
           style: TextStyle(
             color: Colors.white,
           ),
@@ -43,6 +44,43 @@ class History extends StatelessWidget {
 
   Widget buildTripCard(BuildContext context, DocumentSnapshot payment) {
     return new GestureDetector(
+      onTap: () {
+        return showDialog(
+          context: context,
+          builder: (context) {
+            return Center(
+                child: Material(
+              type: MaterialType.transparency,
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white),
+                padding: EdgeInsets.all(14),
+                width: MediaQuery.of(context).size.width * 0.7,
+                height: 320,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BarcodeWidget(
+                        barcode: Barcode.qrCode(),
+                        color: Colors.black,
+                        // data: "Start Staion - ${payment['petName']}\n"
+                        //     "End Station - ${(payment['doctor'])}\n"
+                        //     "Price - ${(payment['petType'])}\n"
+                        //     "Class - ${(payment['selectTime'])}\n",
+                        data: "Pjkhdvcjksdvbsdkbvjsdbkbndsbjk",
+                        width: 200,
+                        height: 200,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ));
+          },
+        );
+      },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

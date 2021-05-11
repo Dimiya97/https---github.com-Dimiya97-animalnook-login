@@ -26,14 +26,6 @@ class HomeSigninWidget extends StatelessWidget {
                   color: Colors.red,
                   size: 30.0,
                 ),
-                Text(
-                  ' | Sign in with Google',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
               ],
             ),
           ),
