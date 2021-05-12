@@ -21,7 +21,7 @@ class FirstView extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Icon(
-                      FontAwesomeIcons.car,
+                      FontAwesomeIcons.dog,
                       color: Color.fromRGBO(245, 48, 111, 1.0),
                       size: 60.0,
                     ),
@@ -29,7 +29,7 @@ class FirstView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'VEHICLE',
+                          'ANIMAL',
                           style: TextStyle(
                             fontSize: 38.0,
                             fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class FirstView extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'SERVICE',
+                          'BOOK',
                           style: TextStyle(
                             fontSize: 38.0,
                             fontWeight: FontWeight.bold,

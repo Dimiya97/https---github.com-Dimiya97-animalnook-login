@@ -6,7 +6,6 @@ import 'package:animalbook/services/auth_service.dart';
 
 import 'package:animalbook/widgets/provider_widet.dart';
 
-// TODO move this to tone location
 final primaryColor = const Color(0xFF75A2EA);
 
 enum AuthFormType { signIn, signUp, reset }
@@ -99,7 +98,7 @@ class _SignUpViewState extends State<SignUpView> {
               Column(
                 children: <Widget>[
                   Icon(
-                    FontAwesomeIcons.train,
+                    FontAwesomeIcons.dog,
                     color: Color.fromRGBO(245, 48, 111, 1.0),
                     size: 60.0,
                   ),
@@ -107,7 +106,7 @@ class _SignUpViewState extends State<SignUpView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'VEHICLE',
+                        'ANIMAL',
                         style: TextStyle(
                           fontSize: 38.0,
                           fontWeight: FontWeight.bold,
@@ -115,7 +114,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       Text(
-                        'SERVICE',
+                        'BOOK',
                         style: TextStyle(
                           fontSize: 38.0,
                           fontWeight: FontWeight.bold,
@@ -383,7 +382,6 @@ class _SignUpViewState extends State<SignUpView> {
           switchFormState(_newFormState);
         },
       ),
-      buildSocialIcons(_showSocial),
     ];
   }
 
@@ -399,34 +397,6 @@ class _SignUpViewState extends State<SignUpView> {
             authFormType = AuthFormType.reset;
           });
         },
-      ),
-      visible: visible,
-    );
-  }
-
-  Widget buildSocialIcons(bool visible) {
-    final _auth = Provider.of(context).auth;
-    return Visibility(
-      child: Column(
-        children: <Widget>[
-          Divider(
-            color: Colors.black,
-          ),
-          SizedBox(height: 10),
-          GoogleAuthButton(
-            onPressed: () async {
-              try {
-                await _auth.signInWithGoogle();
-                Navigator.of(context).pushReplacementNamed('/nav');
-              } catch (e) {
-                setState(() {
-                  print(e);
-                  _warning = e.message;
-                });
-              }
-            },
-          )
-        ],
       ),
       visible: visible,
     );
