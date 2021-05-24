@@ -123,7 +123,7 @@ class History extends StatelessWidget {
                         style: new TextStyle(fontSize: 35.0),
                       ),
                       Spacer(),
-                      Icon(Icons.train_rounded),
+                      Icon(Icons.done),
                     ],
                   ),
                 ),

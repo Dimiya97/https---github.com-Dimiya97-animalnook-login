@@ -180,6 +180,18 @@ class _HomeState extends State<Home> {
                               'user': name.displayName,
                               'date': formattedDate1,
                             });
+
+                             await Firestore.instance
+                                .collection("Vet")
+                                .add({
+                              'doctor': selectedUser,
+                              'selectTime': selectTime,
+                              'petType': selectType,
+                              'petName': value1.text,
+                              'note': value2.text,
+                              'user': name.displayName,
+                              'date': formattedDate1,
+                            });
                           },
                           fillColor: Colors.red,
                           shape: RoundedRectangleBorder(

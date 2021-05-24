@@ -167,7 +167,7 @@ class _SignUpViewState extends State<SignUpView> {
   Widget showAlert() {
     if (_warning != null) {
       return Container(
-        color: Colors.black,
+        color: Colors.orange,
         width: double.infinity,
         padding: EdgeInsets.all(8.0),
         child: Row(
@@ -217,7 +217,7 @@ class _SignUpViewState extends State<SignUpView> {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 30,
-        color: Colors.black,
+        color: Colors.white,
       ),
     );
   }
